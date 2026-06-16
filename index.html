@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CPIT455 Individual Report — Khaled Baali | Usaruna</title>
+  <title>Usaruna — CPIT455 Team Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,29 +14,15 @@
         extend: {
           colors: {
             brand: {
-              50:  '#f0fdf4',
-              100: '#dcfce7',
-              200: '#bbf7d0',
-              300: '#86efac',
-              400: '#4ade80',
-              500: '#22c55e',
-              600: '#16a34a',
-              700: '#15803d',
-              800: '#166534',
-              900: '#14532d',
+              50:  '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0',
+              300: '#86efac', 400: '#4ade80', 500: '#22c55e',
+              600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d',
             },
             surface: {
-              0:   '#ffffff',
-              50:  '#f8fafc',
-              100: '#f1f5f9',
-              200: '#e2e8f0',
-              300: '#cbd5e1',
-              400: '#94a3b8',
-              500: '#64748b',
-              600: '#475569',
-              700: '#334155',
-              800: '#1e293b',
-              900: '#0f172a',
+              0:   '#ffffff', 50:  '#f8fafc', 100: '#f1f5f9',
+              200: '#e2e8f0', 300: '#cbd5e1', 400: '#94a3b8',
+              500: '#64748b', 600: '#475569', 700: '#334155',
+              800: '#1e293b', 900: '#0f172a',
             }
           },
           fontFamily: {
@@ -52,8 +38,7 @@
     *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', system-ui, sans-serif; }
-
-    /* ── Noise texture overlay on hero ── */
+ 
     .hero-noise::after {
       content: '';
       position: absolute;
@@ -62,11 +47,8 @@
       pointer-events: none;
       opacity: 0.35;
     }
-
-    /* ── Signature element: animated gradient border on concept card ── */
-    @keyframes border-spin {
-      to { --angle: 360deg; }
-    }
+ 
+    @keyframes border-spin { to { --angle: 360deg; } }
     @property --angle {
       syntax: '<angle>';
       initial-value: 0deg;
@@ -78,814 +60,752 @@
       animation: border-spin 6s linear infinite;
       border: 2px solid transparent;
     }
-
-    /* ── Code block styling ── */
-    .code-block {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem;
-      line-height: 1.7;
-    }
-    .code-token-keyword  { color: #4ade80; }
-    .code-token-fn       { color: #60a5fa; }
-    .code-token-string   { color: #fbbf24; }
-    .code-token-comment  { color: #64748b; font-style: italic; }
-    .code-token-var      { color: #f0abfc; }
-    .code-token-const    { color: #fb923c; }
-    .code-token-plain    { color: #e2e8f0; }
-
-    /* ── Section reveal animation ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .animate-fadeUp { animation: fadeUp 0.6s ease forwards; }
-
-    /* ── Scroll timeline progress bar ── */
+ 
+    .code-block { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; line-height: 1.75; }
+    .code-token-keyword { color: #4ade80; }
+    .code-token-fn      { color: #60a5fa; }
+    .code-token-string  { color: #fbbf24; }
+    .code-token-comment { color: #64748b; font-style: italic; }
+    .code-token-var     { color: #f0abfc; }
+    .code-token-plain   { color: #e2e8f0; }
+ 
     .progress-bar {
-      position: fixed;
-      top: 0; left: 0;
+      position: fixed; top: 0; left: 0;
       height: 3px;
       background: linear-gradient(90deg, #16a34a, #4ade80);
-      width: 0%;
-      z-index: 1000;
+      width: 0%; z-index: 1000;
       transition: width 0.1s linear;
     }
-
-    /* ── TOC active state ── */
-    .toc-link.active { color: #16a34a; font-weight: 600; }
-    .toc-link.active::before { opacity: 1; transform: scaleY(1); }
-    .toc-link::before {
-      content: '';
-      position: absolute;
-      left: -1px; top: 0; bottom: 0;
-      width: 2px;
-      background: #16a34a;
-      opacity: 0;
-      transform: scaleY(0);
-      transition: all 0.25s ease;
+ 
+    /* Member card accent lines */
+    .card-accent-1 { border-top: 3px solid #6366f1; }
+    .card-accent-2 { border-top: 3px solid #16a34a; }
+    .card-accent-3 { border-top: 3px solid #ef4444; }
+    .card-accent-4 { border-top: 3px solid #0ea5e9; }
+    .card-accent-5 { border-top: 3px solid #f59e0b; }
+ 
+    .badge-1 { background: #eef2ff; color: #4338ca; }
+    .badge-2 { background: #f0fdf4; color: #15803d; }
+    .badge-3 { background: #fef2f2; color: #dc2626; }
+    .badge-4 { background: #f0f9ff; color: #0369a1; }
+    .badge-5 { background: #fffbeb; color: #b45309; }
+ 
+    .icon-bg-1 { background: #eef2ff; color: #4338ca; }
+    .icon-bg-2 { background: #f0fdf4; color: #15803d; }
+    .icon-bg-3 { background: #fef2f2; color: #dc2626; }
+    .icon-bg-4 { background: #f0f9ff; color: #0369a1; }
+    .icon-bg-5 { background: #fffbeb; color: #b45309; }
+ 
+    .dot-1 { background: #6366f1; }
+    .dot-2 { background: #16a34a; }
+    .dot-3 { background: #ef4444; }
+    .dot-4 { background: #0ea5e9; }
+    .dot-5 { background: #f59e0b; }
+ 
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
-    .toc-link { position: relative; }
-
-    /* Print styles */
+    .animate-fadeUp { animation: fadeUp 0.55s ease forwards; }
+ 
     @media print {
-      .progress-bar, aside, nav { display: none !important; }
+      .progress-bar { display: none !important; }
       body { background: white; }
-      .code-block { border: 1px solid #e2e8f0; }
     }
   </style>
 </head>
-
+ 
 <body class="bg-surface-50 text-surface-800 antialiased">
-
-  <!-- ── Progress Bar ── -->
+ 
+  <!-- Progress Bar -->
   <div class="progress-bar" id="progressBar"></div>
-
-  <!-- ══════════════════════════════════════════════
-       HERO / HEADER
-  ══════════════════════════════════════════════ -->
+ 
+  <!-- ══════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════ -->
   <header class="relative overflow-hidden bg-surface-900 hero-noise">
-    <!-- Decorative blobs -->
     <div class="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-brand-700 opacity-20 blur-3xl pointer-events-none"></div>
-    <div class="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-brand-500 opacity-10 blur-3xl pointer-events-none"></div>
-
-    <div class="relative max-w-5xl mx-auto px-6 py-20 md:py-28">
-      <!-- Course meta -->
+    <div class="absolute top-20 -left-32 w-72 h-72 rounded-full bg-indigo-700 opacity-10 blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-24 right-1/3 w-64 h-64 rounded-full bg-brand-500 opacity-10 blur-3xl pointer-events-none"></div>
+ 
+    <div class="relative max-w-6xl mx-auto px-6 py-20 md:py-28">
+      <!-- Course pill -->
       <div class="inline-flex items-center gap-2 mb-6 px-3 py-1.5 rounded-full bg-surface-800 border border-surface-700 text-xs font-mono text-surface-400 tracking-widest uppercase">
         <span class="w-1.5 h-1.5 rounded-full bg-brand-400 animate-pulse"></span>
-        CPIT455 · Individual Report · King Abdulaziz University
+        CPIT455 · Team Portfolio · King Abdulaziz University
       </div>
-
-      <!-- Name & role -->
-      <h1 class="font-display text-4xl md:text-6xl text-white leading-tight mb-3">
-        Khaled Baali
+ 
+      <!-- Project name -->
+      <h1 class="font-display text-5xl md:text-7xl text-white leading-none mb-2">
+        Usaruna
+        <span class="text-surface-500 text-4xl md:text-5xl font-normal ml-2">اسرنا</span>
       </h1>
-      <p class="text-brand-400 font-mono text-sm md:text-base font-medium tracking-wider mb-6">
-        Lead Frontend Engineer — <span class="text-surface-400">Usaruna (اسرنا)</span>
+      <p class="text-brand-400 font-mono text-sm md:text-base font-medium tracking-wider mb-5">
+        A Bilingual E-Commerce Marketplace for Saudi Family Businesses
       </p>
-
-      <!-- Report title -->
-      <div class="max-w-2xl">
-        <h2 class="font-display text-2xl md:text-3xl text-surface-100 mb-4 leading-snug">
-          Dependability &amp; Reliability<br/>
-          <span class="text-brand-400">in a Stateful E-Commerce Frontend</span>
-        </h2>
-        <p class="text-surface-400 text-base leading-relaxed">
-          How intentional architectural decisions in <code class="font-mono text-brand-300 text-sm">CartContext.jsx</code> and
-          <code class="font-mono text-brand-300 text-sm">CheckoutPage.jsx</code> produced a cart and checkout
-          subsystem users can trust — across sessions, network interruptions, and concurrent stock changes.
-        </p>
-      </div>
-
-      <!-- Badges -->
-      <div class="mt-8 flex flex-wrap gap-3">
+ 
+      <p class="text-surface-400 text-sm max-w-xl leading-relaxed mb-8">
+        This portfolio documents the five software engineering concepts explored during development,
+        one per team member, as required by the CPIT455 course framework.
+        Supervised by <span class="text-surface-200 font-medium">Dr. Abdulrahman Altalhi</span>.
+      </p>
+ 
+      <!-- Tech stack badges -->
+      <div class="flex flex-wrap gap-2 mb-10">
         <span class="px-3 py-1 rounded-md bg-surface-800 border border-surface-700 text-xs font-mono text-brand-300">React 19</span>
         <span class="px-3 py-1 rounded-md bg-surface-800 border border-surface-700 text-xs font-mono text-brand-300">Supabase + PostgreSQL</span>
-        <span class="px-3 py-1 rounded-md bg-surface-800 border border-surface-700 text-xs font-mono text-brand-300">ACID Transactions</span>
-        <span class="px-3 py-1 rounded-md bg-surface-800 border border-surface-700 text-xs font-mono text-brand-300">Optimistic UI</span>
-        <span class="px-3 py-1 rounded-md bg-surface-800 border border-surface-700 text-xs font-mono text-brand-300">Error Resilience</span>
+        <span class="px-3 py-1 rounded-md bg-surface-800 border border-surface-700 text-xs font-mono text-brand-300">Vite</span>
+        <span class="px-3 py-1 rounded-md bg-surface-800 border border-surface-700 text-xs font-mono text-brand-300">Tailwind CSS</span>
+        <span class="px-3 py-1 rounded-md bg-surface-800 border border-surface-700 text-xs font-mono text-brand-300">Vitest + Playwright</span>
+        <span class="px-3 py-1 rounded-md bg-surface-800 border border-surface-700 text-xs font-mono text-brand-300">Row-Level Security</span>
+      </div>
+ 
+      <!-- 5-member quick grid -->
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+        <!-- ★ SWAP NAME: Person 1 -->
+        <div class="p-3 rounded-xl bg-surface-800/60 border border-surface-700 backdrop-blur-sm">
+          <span class="block font-mono text-[10px] text-indigo-400 tracking-widest uppercase mb-1">Person 1</span>
+          <span class="block text-xs font-semibold text-white">Busam Barak</span>
+          <span class="block text-[11px] text-surface-500 leading-tight mt-0.5">Software Reuse</span>
+        </div>
+        <!-- ★ SWAP NAME: Person 2 -->
+        <div class="p-3 rounded-xl bg-surface-800/60 border border-surface-700 backdrop-blur-sm">
+          <span class="block font-mono text-[10px] text-brand-400 tracking-widest uppercase mb-1">Person 2</span>
+          <span class="block text-xs font-semibold text-white">Khaled Baali</span>
+          <span class="block text-[11px] text-surface-500 leading-tight mt-0.5">Dependability &amp; Reliability</span>
+        </div>
+        <!-- ★ SWAP NAME: Person 3 -->
+        <div class="p-3 rounded-xl bg-surface-800/60 border border-surface-700 backdrop-blur-sm">
+          <span class="block font-mono text-[10px] text-red-400 tracking-widest uppercase mb-1">Person 3</span>
+          <span class="block text-xs font-semibold text-white">Rami Jameel</span>
+          <span class="block text-[11px] text-surface-500 leading-tight mt-0.5">Security &amp; Access Control</span>
+        </div>
+        <!-- ★ SWAP NAME: Person 4 -->
+        <div class="p-3 rounded-xl bg-surface-800/60 border border-surface-700 backdrop-blur-sm">
+          <span class="block font-mono text-[10px] text-sky-400 tracking-widest uppercase mb-1">Person 4</span>
+          <span class="block text-xs font-semibold text-white">Ahmed Aljohani</span>
+          <span class="block text-[11px] text-surface-500 leading-tight mt-0.5">Distributed &amp; Cloud Arch.</span>
+        </div>
+        <!-- ★ SWAP NAME: Person 5 -->
+        <div class="p-3 rounded-xl bg-surface-800/60 border border-surface-700 backdrop-blur-sm">
+          <span class="block font-mono text-[10px] text-amber-400 tracking-widest uppercase mb-1">Person 5</span>
+          <span class="block text-xs font-semibold text-white">Anas Ibarim</span>
+          <span class="block text-[11px] text-surface-500 leading-tight mt-0.5">Testing, Quality &amp; Risk</span>
+        </div>
       </div>
     </div>
   </header>
-
-  <!-- ══════════════════════════════════════════════
-       MAIN LAYOUT (Sidebar TOC + Content)
-  ══════════════════════════════════════════════ -->
-  <div class="max-w-5xl mx-auto px-6 py-12 md:py-16 flex flex-col lg:flex-row gap-10">
-
-    <!-- ── Sticky TOC Sidebar ── -->
-    <aside class="hidden lg:block w-52 shrink-0">
-      <div class="sticky top-8">
-        <p class="text-[10px] font-mono tracking-[0.2em] uppercase text-surface-400 mb-4">Contents</p>
-        <nav class="flex flex-col gap-1">
-          <a href="#introduction"      class="toc-link pl-4 py-1.5 text-xs text-surface-500 hover:text-brand-600 transition-colors duration-150">01 · Introduction</a>
-          <a href="#assigned-concept"  class="toc-link pl-4 py-1.5 text-xs text-surface-500 hover:text-brand-600 transition-colors duration-150">02 · Assigned Concept</a>
-          <a href="#contribution"      class="toc-link pl-4 py-1.5 text-xs text-surface-500 hover:text-brand-600 transition-colors duration-150">03 · My Contribution</a>
-          <a href="#hybrid-cart"       class="toc-link pl-4 py-1.5 text-xs text-surface-500 hover:text-brand-600 transition-colors duration-150 ml-3">↳ Hybrid Cart</a>
-          <a href="#rehydration"       class="toc-link pl-4 py-1.5 text-xs text-surface-500 hover:text-brand-600 transition-colors duration-150 ml-3">↳ Live Rehydration</a>
-          <a href="#error-parsing"     class="toc-link pl-4 py-1.5 text-xs text-surface-500 hover:text-brand-600 transition-colors duration-150 ml-3">↳ Error Parsing</a>
-          <a href="#optimistic"        class="toc-link pl-4 py-1.5 text-xs text-surface-500 hover:text-brand-600 transition-colors duration-150 ml-3">↳ Optimistic UI</a>
-          <a href="#evidence"          class="toc-link pl-4 py-1.5 text-xs text-surface-500 hover:text-brand-600 transition-colors duration-150">04 · Code Evidence</a>
-          <a href="#learned"           class="toc-link pl-4 py-1.5 text-xs text-surface-500 hover:text-brand-600 transition-colors duration-150">05 · What I Learned</a>
-          <a href="#conclusion"        class="toc-link pl-4 py-1.5 text-xs text-surface-500 hover:text-brand-600 transition-colors duration-150">06 · Conclusion</a>
-        </nav>
-
-        <div class="mt-8 pt-6 border-t border-surface-200">
-          <p class="text-[10px] font-mono uppercase text-surface-400 mb-2 tracking-widest">Person Role</p>
-          <p class="text-xs text-surface-600 font-medium">Person 2</p>
-          <p class="text-xs text-surface-500">Dependability &amp; Reliability</p>
-        </div>
-        <div class="mt-4">
+ 
+  <!-- ══════════════════════════════════════════
+       INTRO STRIP
+  ══════════════════════════════════════════ -->
+  <div class="bg-white border-b border-surface-200">
+    <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row gap-6 md:gap-10 items-start md:items-center">
+      <div class="flex-1">
+        <p class="text-surface-600 text-sm leading-relaxed">
+          Usaruna is built on <strong class="text-surface-900">React 19 + Supabase</strong>, featuring a hybrid cart system,
+          ACID-compliant PostgreSQL checkout, per-item order lifecycle management, city-based geo-filtering,
+          RLS-enforced multi-tenant security, and validated with Vitest unit tests and Playwright E2E tests.
+          Each section below maps one team member's work to a core CPIT455 software engineering concept.
+        </p>
+      </div>
+      <div class="shrink-0 flex gap-6 text-center">
+        <div><p class="font-display text-3xl text-brand-600">5</p><p class="text-xs text-surface-500">Team Members</p></div>
+        <div class="w-px bg-surface-200"></div>
+        <div><p class="font-display text-3xl text-brand-600">5</p><p class="text-xs text-surface-500">SE Concepts</p></div>
+        <div class="w-px bg-surface-200"></div>
+        <div><p class="font-display text-3xl text-brand-600">1</p><p class="text-xs text-surface-500">Platform</p></div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- ══════════════════════════════════════════
+       MEMBER SECTIONS
+  ══════════════════════════════════════════ -->
+  <main class="max-w-6xl mx-auto px-6 py-16 space-y-12">
+ 
+    <!-- ─────────────────────────────────────────
+         PERSON 1 · SOFTWARE REUSE · Busam Barak
+         ★ SWAP NAME: change "Busam Barak" below
+    ───────────────────────────────────────── -->
+    <section id="person-1" class="scroll-mt-8">
+      <div class="gradient-border rounded-2xl overflow-hidden bg-white">
+        <div class="card-accent-1 p-8">
+          <!-- Header row -->
+          <div class="flex flex-col md:flex-row md:items-start gap-6 mb-8">
+            <div class="shrink-0 w-14 h-14 rounded-2xl icon-bg-1 flex items-center justify-center">
+              <!-- Icon: puzzle piece (reuse) -->
+              <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959v0a.64.64 0 01-.657.643 48.39 48.39 0 01-4.163-.3c.186 1.613.293 3.25.315 4.907a.656.656 0 01-.658.663v0c-.355 0-.676-.186-.959-.401a1.647 1.647 0 00-1.003-.349c-1.036 0-1.875 1.007-1.875 2.25s.84 2.25 1.875 2.25c.369 0 .713-.128 1.003-.349.283-.215.604-.401.959-.401v0c.31 0 .555.26.532.57a48.039 48.039 0 01-.642 5.056c1.518.19 3.058.309 4.616.354a.64.64 0 00.657-.643v0c0-.355-.186-.676-.401-.959a1.647 1.647 0 01-.349-1.003c0-1.036 1.007-1.875 2.25-1.875 1.243 0 2.25.84 2.25 1.875 0 .369-.128.713-.349 1.003-.215.283-.401.604-.401.959v0c0 .362.261.643.632.632a48.502 48.502 0 005.051-.611c0-1.553.12-3.087.348-4.584a.75.75 0 00-.648-.734c-1.555-.197-3.08-.327-4.624-.382-.595-.023-1.056-.534-1.056-1.125v0z"/>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center gap-3 mb-2">
+                <span class="font-mono text-[10px] tracking-widest uppercase badge-1 px-2 py-0.5 rounded-full font-semibold">Person 1</span>
+                <span class="font-mono text-[10px] tracking-widest uppercase badge-1 px-2 py-0.5 rounded-full">Software Reuse</span>
+              </div>
+              <!-- ★ SWAP NAME: Person 1 full name -->
+              <h2 class="font-display text-2xl md:text-3xl text-surface-900 mb-1">Busam Barak</h2>
+              <p class="text-surface-500 text-sm">Software Architect &amp; Dependency Strategist</p>
+            </div>
+          </div>
+ 
+          <!-- Concept definition -->
+          <div class="p-5 rounded-xl bg-indigo-50 border border-indigo-100 mb-8">
+            <p class="text-xs font-mono text-indigo-600 uppercase tracking-widest mb-2 font-semibold">Concept Definition</p>
+            <p class="text-surface-700 text-sm leading-relaxed">
+              <strong class="text-surface-900">Software Reuse</strong> is the practice of leveraging existing software assets —
+              libraries, frameworks, services, and patterns — to reduce development effort, increase reliability,
+              and accelerate delivery. Effective reuse requires disciplined dependency selection, version management,
+              and understanding the contracts each reused component provides.
+            </p>
+          </div>
+ 
+          <!-- Two-col: contributions + evidence -->
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <p class="text-xs font-mono text-surface-400 uppercase tracking-widest mb-4">Key Contributions</p>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 w-2 h-2 rounded-full dot-1 shrink-0"></span>
+                  <div>
+                    <p class="text-sm font-semibold text-surface-800">React 19 Component Architecture</p>
+                    <p class="text-xs text-surface-500 leading-relaxed">Structured the entire UI as a tree of reusable, composable components, eliminating duplicate UI logic across buyer and seller flows.</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 w-2 h-2 rounded-full dot-1 shrink-0"></span>
+                  <div>
+                    <p class="text-sm font-semibold text-surface-800">Supabase BaaS — Backend Without Code</p>
+                    <p class="text-xs text-surface-500 leading-relaxed">Replaced ~3,000 lines of custom backend (auth, REST API, file storage) by adopting Supabase as a Backend-as-a-Service layer, reusing its PostgREST auto-generated API.</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 w-2 h-2 rounded-full dot-1 shrink-0"></span>
+                  <div>
+                    <p class="text-sm font-semibold text-surface-800">Vite Build Toolchain</p>
+                    <p class="text-xs text-surface-500 leading-relaxed">Adopted Vite's pre-configured HMR pipeline, eliminating custom Webpack configuration and reusing community-maintained presets.</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 w-2 h-2 rounded-full dot-1 shrink-0"></span>
+                  <div>
+                    <p class="text-sm font-semibold text-surface-800">Tailwind CSS Design Tokens</p>
+                    <p class="text-xs text-surface-500 leading-relaxed">Reused Tailwind's utility-first token system for spacing, typography, and color — the entire design system with zero custom CSS files.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-mono text-surface-400 uppercase tracking-widest mb-4">Evidence · Dependency Map</p>
+              <div class="bg-surface-900 rounded-xl p-5 code-block">
+<pre><code><span class="code-token-comment">// package.json — Reused assets catalogue</span>
+<span class="code-token-plain">{
+  </span><span class="code-token-string">"dependencies"</span><span class="code-token-plain">: {</span>
+    <span class="code-token-comment">// Presentation layer</span>
+    <span class="code-token-string">"react"</span><span class="code-token-plain">: </span><span class="code-token-string">"^19.0.0"</span><span class="code-token-plain">,</span>
+    <span class="code-token-string">"react-router-dom"</span><span class="code-token-plain">: </span><span class="code-token-string">"^6.22"</span><span class="code-token-plain">,</span>
+    <span class="code-token-comment">// BaaS: Auth + DB + Storage + API</span>
+    <span class="code-token-string">"@supabase/supabase-js"</span><span class="code-token-plain">: </span><span class="code-token-string">"^2.39"</span><span class="code-token-plain">,</span>
+    <span class="code-token-comment">// Styling system (zero custom CSS)</span>
+    <span class="code-token-string">"tailwindcss"</span><span class="code-token-plain">: </span><span class="code-token-string">"^3.4"</span>
+  <span class="code-token-plain">},</span>
+  <span class="code-token-string">"devDependencies"</span><span class="code-token-plain">: {</span>
+    <span class="code-token-string">"vite"</span><span class="code-token-plain">: </span><span class="code-token-string">"^5.1"</span><span class="code-token-plain">,</span>
+    <span class="code-token-string">"vitest"</span><span class="code-token-plain">: </span><span class="code-token-string">"^1.3"</span><span class="code-token-plain">,</span>
+    <span class="code-token-string">"@playwright/test"</span><span class="code-token-plain">: </span><span class="code-token-string">"^1.42"</span>
+  <span class="code-token-plain">}</span>
+<span class="code-token-plain">}</span></code></pre>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </aside>
-
-    <!-- ── Main Content ── -->
-    <main class="flex-1 min-w-0 space-y-16">
-
-      <!-- ══ 01 INTRODUCTION ══ -->
-      <section id="introduction" class="scroll-mt-8">
-        <div class="flex items-center gap-4 mb-6">
-          <span class="font-mono text-xs text-brand-600 font-semibold tracking-widest uppercase">01</span>
-          <div class="flex-1 h-px bg-surface-200"></div>
-          <h2 class="font-display text-2xl text-surface-900">Introduction</h2>
-        </div>
-
-        <div class="prose-like space-y-5 text-surface-700 leading-relaxed">
-          <p>
-            Usaruna (اسرنا) is a bilingual Arabic-English e-commerce marketplace purpose-built to amplify Saudi family businesses on the web. As the <strong class="text-surface-900 font-semibold">Lead Frontend Engineer</strong> on this capstone team, I was responsible for the entirety of the client-side application architecture — from the global state management layer down to the granular interaction affordances that users encounter on every page.
-          </p>
-          <p>
-            This report fulfils the requirements of Person 2 in the CPIT455 individual reporting framework, with a focus on the software quality attribute of <em>Dependability and Reliability</em>. My contribution to this attribute was not abstract or theoretical; it was expressed through concrete, production-grade engineering decisions made at every layer of the frontend stack.
-          </p>
-          <p>
-            The sections that follow provide a rigorous account of how I designed and implemented a cart and checkout subsystem that remains <strong class="text-surface-900 font-semibold">consistent under session transitions</strong>, <strong class="text-surface-900 font-semibold">truthful about live inventory</strong>, <strong class="text-surface-900 font-semibold">resilient to backend transaction failures</strong>, and <strong class="text-surface-900 font-semibold">perceptually fast</strong> without sacrificing correctness.
-          </p>
-        </div>
-      </section>
-
-      <!-- ══ 02 ASSIGNED CONCEPT ══ -->
-      <section id="assigned-concept" class="scroll-mt-8">
-        <div class="flex items-center gap-4 mb-6">
-          <span class="font-mono text-xs text-brand-600 font-semibold tracking-widest uppercase">02</span>
-          <div class="flex-1 h-px bg-surface-200"></div>
-          <h2 class="font-display text-2xl text-surface-900">Assigned Concept</h2>
-        </div>
-
-        <!-- Signature element: animated gradient border card -->
-        <div class="gradient-border rounded-2xl p-8 mb-8 bg-white">
-          <div class="flex items-start gap-5">
-            <div class="shrink-0 w-12 h-12 rounded-xl bg-brand-50 border border-brand-200 flex items-center justify-center">
-              <svg class="w-6 h-6 text-brand-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+    </section>
+ 
+    <!-- ─────────────────────────────────────────
+         PERSON 2 · DEPENDABILITY · Khaled Baali
+         ★ SWAP NAME: change "Khaled Baali" below
+    ───────────────────────────────────────── -->
+    <section id="person-2" class="scroll-mt-8">
+      <div class="gradient-border rounded-2xl overflow-hidden bg-white">
+        <div class="card-accent-2 p-8">
+          <div class="flex flex-col md:flex-row md:items-start gap-6 mb-8">
+            <div class="shrink-0 w-14 h-14 rounded-2xl icon-bg-2 flex items-center justify-center">
+              <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.955 11.955 0 003 12c0 6.627 5.373 12 12 12 6.628 0 12-5.373 12-12 0-1.993-.487-3.867-1.346-5.522A11.96 11.96 0 0112 4.5c-1.46 0-2.863.26-4.164.736z"/>
               </svg>
             </div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center gap-3 mb-2">
+                <span class="font-mono text-[10px] tracking-widest uppercase badge-2 px-2 py-0.5 rounded-full font-semibold">Person 2</span>
+                <span class="font-mono text-[10px] tracking-widest uppercase badge-2 px-2 py-0.5 rounded-full">Dependability &amp; Reliability</span>
+              </div>
+              <!-- ★ SWAP NAME: Person 2 full name -->
+              <h2 class="font-display text-2xl md:text-3xl text-surface-900 mb-1">Khaled Baali</h2>
+              <p class="text-surface-500 text-sm">Lead Frontend Engineer</p>
+            </div>
+          </div>
+ 
+          <div class="p-5 rounded-xl bg-brand-50 border border-brand-100 mb-8">
+            <p class="text-xs font-mono text-brand-700 uppercase tracking-widest mb-2 font-semibold">Concept Definition</p>
+            <p class="text-surface-700 text-sm leading-relaxed">
+              <strong class="text-surface-900">Dependability &amp; Reliability</strong> is the degree to which a system performs
+              its required functions correctly and consistently under stated conditions. In an e-commerce frontend it manifests as
+              cart state that survives session transitions, prices that are always live, and failures that are communicated
+              honestly and actionably to the user.
+            </p>
+          </div>
+ 
+          <div class="grid md:grid-cols-2 gap-8">
             <div>
-              <h3 class="font-display text-xl text-surface-900 mb-2">Dependability &amp; Reliability</h3>
-              <p class="text-surface-600 text-sm leading-relaxed">
-                A software quality attribute defined in ISO/IEC 25010 and the SWEBOK as the degree to which a system performs its required functions under stated conditions without failure, and the degree to which a system's users can trust it to behave correctly and consistently over time.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-4 mb-8">
-          <div class="p-5 rounded-xl bg-white border border-surface-200">
-            <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center mb-3">
-              <svg class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
-            </div>
-            <h4 class="font-semibold text-surface-800 text-sm mb-1">Correctness</h4>
-            <p class="text-surface-500 text-xs leading-relaxed">The system produces the right output for every input, every time.</p>
-          </div>
-          <div class="p-5 rounded-xl bg-white border border-surface-200">
-            <div class="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center mb-3">
-              <svg class="w-4 h-4 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5C2.962 18.333 3.922 20 5.462 20z"/></svg>
-            </div>
-            <h4 class="font-semibold text-surface-800 text-sm mb-1">Fault Tolerance</h4>
-            <p class="text-surface-500 text-xs leading-relaxed">The system degrades gracefully when components fail, avoiding silent corruption.</p>
-          </div>
-          <div class="p-5 rounded-xl bg-white border border-surface-200">
-            <div class="w-8 h-8 rounded-lg bg-brand-50 flex items-center justify-center mb-3">
-              <svg class="w-4 h-4 text-brand-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-            </div>
-            <h4 class="font-semibold text-surface-800 text-sm mb-1">Availability</h4>
-            <p class="text-surface-500 text-xs leading-relaxed">Critical user flows remain operational even when peripheral systems are degraded.</p>
-          </div>
-        </div>
-
-        <div class="text-surface-700 leading-relaxed space-y-4">
-          <p>
-            In the context of an e-commerce frontend, these properties manifest in scenarios that real users encounter daily: a guest who adds items to their cart and then creates an account; a shopper who revisits their cart after a week only to find a price has changed; a user who attempts to purchase an item that has just sold out. Each scenario is a reliability test. Failing it silently — letting stale data persist, swallowing backend errors, or losing cart state on login — constitutes a reliability defect that erodes user trust with compounding effect.
-          </p>
-          <p>
-            I framed every frontend architectural decision in Usaruna through this lens. The question I consistently asked was not "does this work?" but "<strong class="text-surface-900">what happens when it doesn't, and can the user always trust what they see?</strong>"
-          </p>
-        </div>
-      </section>
-
-      <!-- ══ 03 MY CONTRIBUTION ══ -->
-      <section id="contribution" class="scroll-mt-8">
-        <div class="flex items-center gap-4 mb-8">
-          <span class="font-mono text-xs text-brand-600 font-semibold tracking-widest uppercase">03</span>
-          <div class="flex-1 h-px bg-surface-200"></div>
-          <h2 class="font-display text-2xl text-surface-900">My Contribution</h2>
-        </div>
-
-        <!-- ─ 3.1 Hybrid Cart ─ -->
-        <div id="hybrid-cart" class="scroll-mt-8 mb-14">
-          <div class="flex items-center gap-3 mb-5">
-            <span class="w-6 h-6 rounded-full bg-brand-600 text-white flex items-center justify-center text-xs font-bold shrink-0">1</span>
-            <h3 class="text-lg font-semibold text-surface-900">The Hybrid Cart System — Additive Session Merge</h3>
-          </div>
-
-          <p class="text-surface-700 leading-relaxed mb-5">
-            The most structurally critical reliability mechanism I designed was the <strong class="text-surface-900">hybrid cart architecture</strong> in <code class="font-mono text-sm text-brand-700 bg-brand-50 px-1.5 py-0.5 rounded">CartContext.jsx</code>. The fundamental challenge: Usaruna supports both unauthenticated (guest) shopping and authenticated user shopping. A guest accumulates items in <code class="font-mono text-xs text-surface-600 bg-surface-100 px-1 py-0.5 rounded">localStorage</code>. Upon login, they must not lose those items — but we also cannot blindly overwrite their server-side cart, which may already contain other items from a previous session on a different device.
-          </p>
-
-          <!-- Architecture diagram -->
-          <div class="bg-surface-900 rounded-2xl p-6 mb-6 overflow-x-auto">
-            <p class="font-mono text-xs text-surface-400 mb-4 tracking-widest uppercase">Architecture · Session Merge Flow</p>
-            <div class="font-mono text-xs text-surface-300 space-y-1 whitespace-pre">
-<span class="text-surface-500">┌─────────────────────────────────────────────────────────────┐</span>
-<span class="text-surface-500">│</span>  <span class="text-amber-400">GUEST SESSION</span>                   <span class="text-blue-400">LOGIN EVENT</span>               <span class="text-surface-500">│</span>
-<span class="text-surface-500">│</span>  <span class="text-surface-400">localStorage</span>                                               <span class="text-surface-500">│</span>
-<span class="text-surface-500">│</span>  <span class="text-surface-400">[ {id:A, qty:2},</span>      <span class="text-brand-400">──────────────►</span>  mergeCartsOnLogin()  <span class="text-surface-500">│</span>
-<span class="text-surface-500">│</span>  <span class="text-surface-400">  {id:B, qty:1} ]</span>                       <span class="text-surface-400">│</span>                    <span class="text-surface-500">│</span>
-<span class="text-surface-500">│</span>                                            <span class="text-surface-400">▼</span>                    <span class="text-surface-500">│</span>
-<span class="text-surface-500">│</span>  <span class="text-blue-400">SERVER CART</span>         <span class="text-brand-400">──────────────►</span>  fetch existing cart  <span class="text-surface-500">│</span>
-<span class="text-surface-500">│</span>  <span class="text-surface-400">[ {id:B, qty:3},</span>                        <span class="text-surface-400">│</span>                    <span class="text-surface-500">│</span>
-<span class="text-surface-500">│</span>  <span class="text-surface-400">  {id:C, qty:1} ]</span>                       <span class="text-surface-400">▼</span>                    <span class="text-surface-500">│</span>
-<span class="text-surface-500">│</span>                                       <span class="text-brand-400">ADDITIVE MERGE</span>          <span class="text-surface-500">│</span>
-<span class="text-surface-500">│</span>                                  <span class="text-surface-400">Max(guest, server) per ID</span>   <span class="text-surface-500">│</span>
-<span class="text-surface-500">│</span>                                            <span class="text-surface-400">│</span>                    <span class="text-surface-500">│</span>
-<span class="text-surface-500">│</span>                                            <span class="text-surface-400">▼</span>                    <span class="text-surface-500">│</span>
-<span class="text-surface-500">│</span>                               <span class="text-brand-400">MERGED RESULT</span>                    <span class="text-surface-500">│</span>
-<span class="text-surface-500">│</span>                               <span class="text-surface-400">[ {id:A, qty:2},</span>             <span class="text-surface-500">│</span>
-<span class="text-surface-500">│</span>                               <span class="text-surface-400">  {id:B, qty:4},</span>  <span class="text-surface-400">← 1+3</span>      <span class="text-surface-500">│</span>
-<span class="text-surface-500">│</span>                               <span class="text-surface-400">  {id:C, qty:1} ]</span>           <span class="text-surface-500">│</span>
-<span class="text-surface-500">└─────────────────────────────────────────────────────────────┘</span></div>
-          </div>
-
-          <p class="text-surface-700 leading-relaxed">
-            The merge strategy I implemented is deliberately <strong class="text-surface-900">additive</strong> rather than either overwriting approach. For any product present in both carts, the quantities are summed (capped at per-item stock limits, which are enforced again at the RPC layer). This preserves the user's intent from both contexts. For products unique to either cart, they are retained unconditionally. The entire merge executes as a single batched Supabase upsert, wrapped in error handling so that a network failure during merge does not corrupt either the local or server state — the system retries or falls back gracefully.
-          </p>
-        </div>
-
-        <!-- ─ 3.2 Live Rehydration ─ -->
-        <div id="rehydration" class="scroll-mt-8 mb-14">
-          <div class="flex items-center gap-3 mb-5">
-            <span class="w-6 h-6 rounded-full bg-brand-600 text-white flex items-center justify-center text-xs font-bold shrink-0">2</span>
-            <h3 class="text-lg font-semibold text-surface-900">Live Product Rehydration — Preventing Stale Price Display</h3>
-          </div>
-
-          <p class="text-surface-700 leading-relaxed mb-5">
-            A naive cart implementation persists the entire product snapshot — name, price, image, description — at the moment the user adds an item. This creates a fundamental reliability defect: the cart silently displays outdated prices. If a seller updates a product's price between two of a user's sessions, the user sees the old price at checkout and is charged the new one — a breach of trust with legal and reputational consequences.
-          </p>
-
-          <div class="bg-white border border-surface-200 rounded-xl overflow-hidden mb-6">
-            <div class="flex border-b border-surface-200">
-              <div class="flex-1 px-5 py-3 border-r border-surface-200">
-                <p class="text-xs font-mono text-red-500 font-semibold uppercase tracking-wider mb-1">❌ Anti-pattern</p>
-                <p class="text-xs text-surface-500">Persist full snapshot</p>
-              </div>
-              <div class="flex-1 px-5 py-3">
-                <p class="text-xs font-mono text-brand-600 font-semibold uppercase tracking-wider mb-1">✓ My Implementation</p>
-                <p class="text-xs text-surface-500">Persist only identity</p>
-              </div>
-            </div>
-            <div class="flex">
-              <div class="flex-1 p-5 border-r border-surface-200 bg-red-50/40">
-                <code class="font-mono text-xs text-surface-700">
-                  {<br/>
-                  &nbsp;&nbsp;id: "prod_123",<br/>
-                  &nbsp;&nbsp;qty: 2,<br/>
-                  &nbsp;&nbsp;<span class="text-red-600">name: "Thobe",</span><br/>
-                  &nbsp;&nbsp;<span class="text-red-600">price: 120,</span><br/>
-                  &nbsp;&nbsp;<span class="text-red-600">image: "/old-img.jpg"</span><br/>
-                  }
-                </code>
-              </div>
-              <div class="flex-1 p-5 bg-brand-50/40">
-                <code class="font-mono text-xs text-surface-700">
-                  {<br/>
-                  &nbsp;&nbsp;id: "prod_123",<br/>
-                  &nbsp;&nbsp;qty: 2<br/>
-                  &nbsp;&nbsp;<span class="text-brand-700 font-semibold">// ← that's it</span><br/>
-                  &nbsp;&nbsp;<span class="text-brand-600">// data fetched live</span><br/>
-                  &nbsp;&nbsp;<span class="text-brand-600">// on every render</span><br/>
-                  }
-                </code>
-              </div>
-            </div>
-          </div>
-
-          <p class="text-surface-700 leading-relaxed">
-            My solution stores only the product ID and quantity in state (and <code class="font-mono text-xs text-surface-600 bg-surface-100 px-1 py-0.5 rounded">localStorage</code> for guest sessions). On every cart open or checkout entry, <code class="font-mono text-sm text-brand-700 bg-brand-50 px-1.5 py-0.5 rounded">CartContext.jsx</code> executes a batch Supabase query to rehydrate the full product records from the live database. This guarantees that the price, availability flag, and image the user sees at checkout exactly match the current seller-defined values. The rehydration query uses Supabase's <code class="font-mono text-xs text-surface-600 bg-surface-100 px-1 py-0.5 rounded">.in()</code> filter to batch all IDs in a single round-trip, avoiding N+1 query degradation.
-          </p>
-        </div>
-
-        <!-- ─ 3.3 Error Parsing ─ -->
-        <div id="error-parsing" class="scroll-mt-8 mb-14">
-          <div class="flex items-center gap-3 mb-5">
-            <span class="w-6 h-6 rounded-full bg-brand-600 text-white flex items-center justify-center text-xs font-bold shrink-0">3</span>
-            <h3 class="text-lg font-semibold text-surface-900">Frontend Error Parsing — <code class="font-mono text-base">parseRpcError()</code></h3>
-          </div>
-
-          <p class="text-surface-700 leading-relaxed mb-5">
-            The checkout flow in Usaruna is anchored to a single PostgreSQL RPC function, <code class="font-mono text-sm text-brand-700 bg-brand-50 px-1.5 py-0.5 rounded">place_order</code>, which executes as a fully ACID-compliant transaction: it decrements stock, creates the order, creates per-item order lines, and commits atomically. If any step fails, the entire transaction rolls back. This backend design is correct and robust — but it communicates failure through structured PostgreSQL error objects that are opaque to end users.
-          </p>
-
-          <p class="text-surface-700 leading-relaxed mb-5">
-            I designed and implemented <code class="font-mono text-sm text-brand-700 bg-brand-50 px-1.5 py-0.5 rounded">parseRpcError()</code> as the dedicated translation layer between the database's error vocabulary and the user's experience. The function intercepts the Supabase error response from <code class="font-mono text-sm text-brand-700 bg-brand-50 px-1.5 py-0.5 rounded">CheckoutPage.jsx</code>, inspects the error code or message string, and maps it to a localized, actionable user-facing message.
-          </p>
-
-          <!-- Error mapping table -->
-          <div class="rounded-xl border border-surface-200 overflow-hidden mb-6">
-            <div class="bg-surface-800 px-5 py-3">
-              <p class="font-mono text-xs text-surface-300 tracking-wider">parseRpcError() · Error Code Mapping</p>
-            </div>
-            <div class="overflow-x-auto">
-              <table class="w-full text-sm">
-                <thead class="bg-surface-50 border-b border-surface-200">
-                  <tr>
-                    <th class="text-left px-5 py-3 font-mono text-xs text-surface-500 uppercase tracking-wider">PostgreSQL Signal</th>
-                    <th class="text-left px-5 py-3 font-mono text-xs text-surface-500 uppercase tracking-wider">Parsed Code</th>
-                    <th class="text-left px-5 py-3 font-mono text-xs text-surface-500 uppercase tracking-wider">User Message (AR/EN)</th>
-                    <th class="text-left px-5 py-3 font-mono text-xs text-surface-500 uppercase tracking-wider">Action</th>
-                  </tr>
-                </thead>
-                <tbody class="divide-y divide-surface-100 bg-white">
-                  <tr>
-                    <td class="px-5 py-3 font-mono text-xs text-red-600">P0001 / OUT_OF_STOCK</td>
-                    <td class="px-5 py-3 font-mono text-xs text-surface-700">OUT_OF_STOCK</td>
-                    <td class="px-5 py-3 text-xs text-surface-600">Item is no longer available / المنتج غير متوفر</td>
-                    <td class="px-5 py-3 text-xs text-brand-700 font-medium">Remove from cart</td>
-                  </tr>
-                  <tr class="bg-surface-50/50">
-                    <td class="px-5 py-3 font-mono text-xs text-red-600">P0002 / INSUFFICIENT_STOCK</td>
-                    <td class="px-5 py-3 font-mono text-xs text-surface-700">INSUFFICIENT_STOCK</td>
-                    <td class="px-5 py-3 text-xs text-surface-600">Only N units remain / متبقي N فقط</td>
-                    <td class="px-5 py-3 text-xs text-brand-700 font-medium">Suggest reduce qty</td>
-                  </tr>
-                  <tr>
-                    <td class="px-5 py-3 font-mono text-xs text-red-600">23505 / UNIQUE VIOLATION</td>
-                    <td class="px-5 py-3 font-mono text-xs text-surface-700">DUPLICATE_ORDER</td>
-                    <td class="px-5 py-3 text-xs text-surface-600">Order already placed / تم تقديم الطلب</td>
-                    <td class="px-5 py-3 text-xs text-brand-700 font-medium">Redirect to orders</td>
-                  </tr>
-                  <tr class="bg-surface-50/50">
-                    <td class="px-5 py-3 font-mono text-xs text-red-600">Unknown / Network</td>
-                    <td class="px-5 py-3 font-mono text-xs text-surface-700">UNKNOWN</td>
-                    <td class="px-5 py-3 text-xs text-surface-600">Something went wrong, please retry / حدث خطأ، يرجى المحاولة</td>
-                    <td class="px-5 py-3 text-xs text-brand-700 font-medium">Retry button shown</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <p class="text-surface-700 leading-relaxed">
-            This mapping layer is the frontend's primary contribution to the system's fault-tolerance. By never surfacing raw database errors to users, and by offering actionable next steps for each failure mode, the checkout remains a reliable, trustworthy experience even when the backend transaction must abort. The user is never left confused about why their purchase failed — they receive a clear, localized explanation and a clear path forward.
-          </p>
-        </div>
-
-        <!-- ─ 3.4 Optimistic UI ─ -->
-        <div id="optimistic" class="scroll-mt-8">
-          <div class="flex items-center gap-3 mb-5">
-            <span class="w-6 h-6 rounded-full bg-brand-600 text-white flex items-center justify-center text-xs font-bold shrink-0">4</span>
-            <h3 class="text-lg font-semibold text-surface-900">Optimistic UI Updates — Perceived Reliability</h3>
-          </div>
-
-          <p class="text-surface-700 leading-relaxed mb-5">
-            Reliability is not solely a correctness concern — it is also a perceptual one. A system that is technically correct but feels slow and unresponsive trains users to distrust it. I implemented <strong class="text-surface-900">optimistic UI updates</strong> throughout the cart interaction layer to ensure that the interface responds to user actions instantaneously, without waiting for the round-trip to Supabase.
-          </p>
-
-          <div class="grid md:grid-cols-2 gap-4 mb-5">
-            <div class="p-5 bg-white border border-surface-200 rounded-xl">
-              <div class="flex items-center gap-2 mb-3">
-                <div class="w-2 h-2 rounded-full bg-brand-500"></div>
-                <p class="font-semibold text-surface-800 text-sm">Optimistic Pattern</p>
-              </div>
-              <ol class="space-y-2">
-                <li class="flex items-start gap-2 text-xs text-surface-600">
-                  <span class="font-mono text-brand-600 font-bold mt-0.5">1.</span>
-                  User taps "Add to Cart" → cart state updates <em>immediately</em> in React state
+              <p class="text-xs font-mono text-surface-400 uppercase tracking-widest mb-4">Key Contributions</p>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 w-2 h-2 rounded-full dot-2 shrink-0"></span>
+                  <div>
+                    <p class="text-sm font-semibold text-surface-800">Hybrid Cart — Additive Session Merge</p>
+                    <p class="text-xs text-surface-500 leading-relaxed">On login, guest <code class="font-mono bg-surface-100 px-0.5 rounded">localStorage</code> cart is additively merged with the server cart without data loss from either context.</p>
+                  </div>
                 </li>
-                <li class="flex items-start gap-2 text-xs text-surface-600">
-                  <span class="font-mono text-brand-600 font-bold mt-0.5">2.</span>
-                  Supabase upsert fires asynchronously in the background
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 w-2 h-2 rounded-full dot-2 shrink-0"></span>
+                  <div>
+                    <p class="text-sm font-semibold text-surface-800">Live Product Rehydration</p>
+                    <p class="text-xs text-surface-500 leading-relaxed">Only product ID + quantity is persisted; full product data (price, availability) is fetched live on every cart open, preventing stale price display.</p>
+                  </div>
                 </li>
-                <li class="flex items-start gap-2 text-xs text-surface-600">
-                  <span class="font-mono text-brand-600 font-bold mt-0.5">3.</span>
-                  On <strong>success</strong>: no visible change — state is already correct
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 w-2 h-2 rounded-full dot-2 shrink-0"></span>
+                  <div>
+                    <p class="text-sm font-semibold text-surface-800"><code class="font-mono text-xs bg-brand-50 px-1 rounded">parseRpcError()</code> — Fault Translation Layer</p>
+                    <p class="text-xs text-surface-500 leading-relaxed">Intercepts PostgreSQL ACID transaction errors (<code class="font-mono text-xs">OUT_OF_STOCK</code>, <code class="font-mono text-xs">INSUFFICIENT_STOCK</code>) and surfaces localized, actionable messages.</p>
+                  </div>
                 </li>
-                <li class="flex items-start gap-2 text-xs text-surface-600">
-                  <span class="font-mono text-brand-600 font-bold mt-0.5">4.</span>
-                  On <strong>failure</strong>: revert local state + show toast notification
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 w-2 h-2 rounded-full dot-2 shrink-0"></span>
+                  <div>
+                    <p class="text-sm font-semibold text-surface-800">Optimistic UI with Rollback</p>
+                    <p class="text-xs text-surface-500 leading-relaxed">Cart mutations apply instantly to state; a pre-mutation snapshot is captured and restored atomically if the Supabase write fails.</p>
+                  </div>
                 </li>
-              </ol>
+              </ul>
             </div>
-            <div class="p-5 bg-white border border-surface-200 rounded-xl">
-              <div class="flex items-center gap-2 mb-3">
-                <div class="w-2 h-2 rounded-full bg-surface-400"></div>
-                <p class="font-semibold text-surface-800 text-sm">Why This Matters for Reliability</p>
+            <div>
+              <p class="text-xs font-mono text-surface-400 uppercase tracking-widest mb-4">Evidence · <code class="font-mono">CartContext.jsx</code></p>
+              <div class="bg-surface-900 rounded-xl p-5 code-block">
+<pre><code><span class="code-token-comment">// Additive merge on login — CartContext.jsx</span>
+<span class="code-token-keyword">const</span> <span class="code-token-var">upsertPayload</span> = <span class="code-token-var">guestItems</span>.<span class="code-token-fn">map</span>(<span class="code-token-var">item</span> => ({
+  <span class="code-token-var">user_id</span>:    <span class="code-token-var">userId</span>,
+  <span class="code-token-var">product_id</span>: <span class="code-token-var">item</span>.<span class="code-token-var">id</span>,
+  <span class="code-token-comment">// SUM quantities — never discard either cart</span>
+  <span class="code-token-var">quantity</span>: (<span class="code-token-var">serverMap</span>.<span class="code-token-fn">get</span>(<span class="code-token-var">item</span>.<span class="code-token-var">id</span>) ?? <span class="code-token-plain">0</span>) + <span class="code-token-var">item</span>.<span class="code-token-var">qty</span>,
+}));
+ 
+<span class="code-token-comment">// Live rehydration — single batch query</span>
+<span class="code-token-keyword">const</span> { <span class="code-token-var">data</span> } = <span class="code-token-keyword">await</span> <span class="code-token-var">supabase</span>
+  .<span class="code-token-fn">from</span>(<span class="code-token-string">'products'</span>)
+  .<span class="code-token-fn">select</span>(<span class="code-token-string">'id,name,price,stock_quantity'</span>)
+  .<span class="code-token-fn">in</span>(<span class="code-token-string">'id'</span>, <span class="code-token-var">ids</span>); <span class="code-token-comment">// always live</span></code></pre>
               </div>
-              <p class="text-xs text-surface-600 leading-relaxed">
-                Optimism without rollback is recklessness. My implementation always captures the pre-mutation state before applying the optimistic update. If the server rejects the operation, the UI snaps back to the known-good state and the user is informed. This preserves the <em>appearance</em> of speed while never sacrificing the <em>correctness</em> guarantee.
-              </p>
             </div>
           </div>
         </div>
-      </section>
-
-      <!-- ══ 04 EVIDENCE ══ -->
-      <section id="evidence" class="scroll-mt-8">
-        <div class="flex items-center gap-4 mb-8">
-          <span class="font-mono text-xs text-brand-600 font-semibold tracking-widest uppercase">04</span>
-          <div class="flex-1 h-px bg-surface-200"></div>
-          <h2 class="font-display text-2xl text-surface-900">Code Evidence</h2>
-        </div>
-
-        <p class="text-surface-700 leading-relaxed mb-8">
-          The following annotated code excerpts are drawn directly from the production Usaruna codebase. They evidence the four reliability pillars described above in concrete, reviewable form.
-        </p>
-
-        <!-- Evidence 1: CartContext.jsx -->
-        <div class="mb-10">
-          <div class="flex items-center gap-3 mb-1">
-            <div class="w-2 h-2 rounded-full bg-brand-500"></div>
-            <p class="font-mono text-sm font-semibold text-surface-800">CartContext.jsx</p>
-            <span class="text-xs text-surface-400">— Hybrid cart merge &amp; live rehydration</span>
-          </div>
-          <p class="text-xs text-surface-500 ml-5 mb-4">
-            The global cart context. Implements additive session merge on login, live rehydration on every open, and optimistic mutations with rollback.
-          </p>
-
-          <div class="bg-surface-900 rounded-2xl overflow-hidden">
-            <div class="flex items-center justify-between px-5 py-3 border-b border-surface-800">
-              <div class="flex items-center gap-2">
-                <div class="flex gap-1.5">
-                  <span class="w-3 h-3 rounded-full bg-red-500"></span>
-                  <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
-                  <span class="w-3 h-3 rounded-full bg-green-500"></span>
-                </div>
-                <span class="font-mono text-xs text-surface-400 ml-2">CartContext.jsx</span>
-              </div>
-              <span class="font-mono text-xs text-surface-600">React 19 · Supabase</span>
-            </div>
-            <div class="p-6 overflow-x-auto code-block">
-<pre><code><span class="code-token-comment">// ──────────────────────────────────────────────────────
-// mergeCartsOnLogin — fires immediately after auth state
-// changes to authenticated. Implements additive merge:
-// quantities for duplicate products are SUMMED, not overwritten.
-// ──────────────────────────────────────────────────────</span>
-<span class="code-token-keyword">const</span> <span class="code-token-fn">mergeCartsOnLogin</span> = <span class="code-token-keyword">async</span> (<span class="code-token-var">userId</span>) => {
-  <span class="code-token-keyword">const</span> <span class="code-token-var">guestItems</span> = <span class="code-token-fn">getLocalCart</span>(); <span class="code-token-comment">// [{id, qty}] from localStorage</span>
-  <span class="code-token-keyword">if</span> (!<span class="code-token-var">guestItems</span>.length) <span class="code-token-keyword">return</span>;
-
-  <span class="code-token-comment">// Fetch the authenticated user's existing server-side cart</span>
-  <span class="code-token-keyword">const</span> { <span class="code-token-var">data</span>: <span class="code-token-var">serverItems</span>, <span class="code-token-var">error</span> } = <span class="code-token-keyword">await</span> <span class="code-token-var">supabase</span>
-    .<span class="code-token-fn">from</span>(<span class="code-token-string">'cart_items'</span>)
-    .<span class="code-token-fn">select</span>(<span class="code-token-string">'product_id, quantity'</span>)
-    .<span class="code-token-fn">eq</span>(<span class="code-token-string">'user_id'</span>, <span class="code-token-var">userId</span>);
-
-  <span class="code-token-keyword">if</span> (<span class="code-token-var">error</span>) {
-    <span class="code-token-comment">// Network failure: preserve guest cart, retry on next session</span>
-    <span class="code-token-fn">reportError</span>(<span class="code-token-string">'cart_merge_fetch'</span>, <span class="code-token-var">error</span>);
-    <span class="code-token-keyword">return</span>;
-  }
-
-  <span class="code-token-comment">// Build a map from server cart for O(1) lookup during merge</span>
-  <span class="code-token-keyword">const</span> <span class="code-token-var">serverMap</span> = <span class="code-token-keyword">new</span> <span class="code-token-fn">Map</span>(
-    (<span class="code-token-var">serverItems</span> ?? []).<span class="code-token-fn">map</span>(<span class="code-token-var">i</span> => [<span class="code-token-var">i</span>.<span class="code-token-var">product_id</span>, <span class="code-token-var">i</span>.<span class="code-token-var">quantity</span>])
-  );
-
-  <span class="code-token-comment">// ADDITIVE MERGE: for each guest item, sum with server quantity</span>
-  <span class="code-token-keyword">const</span> <span class="code-token-var">upsertPayload</span> = <span class="code-token-var">guestItems</span>.<span class="code-token-fn">map</span>((<span class="code-token-var">item</span>) => ({
-    <span class="code-token-var">user_id</span>:    <span class="code-token-var">userId</span>,
-    <span class="code-token-var">product_id</span>: <span class="code-token-var">item</span>.<span class="code-token-var">id</span>,
-    <span class="code-token-var">quantity</span>:   (<span class="code-token-var">serverMap</span>.<span class="code-token-fn">get</span>(<span class="code-token-var">item</span>.<span class="code-token-var">id</span>) ?? <span class="code-token-const">0</span>) + <span class="code-token-var">item</span>.<span class="code-token-var">qty</span>,
-  }));
-
-  <span class="code-token-keyword">const</span> { <span class="code-token-var">error</span>: <span class="code-token-var">upsertError</span> } = <span class="code-token-keyword">await</span> <span class="code-token-var">supabase</span>
-    .<span class="code-token-fn">from</span>(<span class="code-token-string">'cart_items'</span>)
-    .<span class="code-token-fn">upsert</span>(<span class="code-token-var">upsertPayload</span>, { <span class="code-token-var">onConflict</span>: <span class="code-token-string">'user_id,product_id'</span> });
-
-  <span class="code-token-keyword">if</span> (!<span class="code-token-var">upsertError</span>) {
-    <span class="code-token-fn">clearLocalCart</span>(); <span class="code-token-comment">// Only clear guest cart on confirmed server write</span>
-    <span class="code-token-keyword">await</span> <span class="code-token-fn">rehydrateCart</span>(<span class="code-token-var">userId</span>); <span class="code-token-comment">// Fetch live product data immediately</span>
-  }
-};
-
-<span class="code-token-comment">// ──────────────────────────────────────────────────────
-// rehydrateCart — fetches live product records for all
-// cart item IDs. Guarantees prices and availability are
-// always current, never stale from a previous session.
-// ──────────────────────────────────────────────────────</span>
-<span class="code-token-keyword">const</span> <span class="code-token-fn">rehydrateCart</span> = <span class="code-token-keyword">async</span> (<span class="code-token-var">userId</span>) => {
-  <span class="code-token-keyword">const</span> { <span class="code-token-var">data</span>: <span class="code-token-var">cartRows</span> } = <span class="code-token-keyword">await</span> <span class="code-token-var">supabase</span>
-    .<span class="code-token-fn">from</span>(<span class="code-token-string">'cart_items'</span>)
-    .<span class="code-token-fn">select</span>(<span class="code-token-string">'product_id, quantity'</span>)
-    .<span class="code-token-fn">eq</span>(<span class="code-token-string">'user_id'</span>, <span class="code-token-var">userId</span>);
-
-  <span class="code-token-keyword">const</span> <span class="code-token-var">ids</span> = <span class="code-token-var">cartRows</span>?.<span class="code-token-fn">map</span>(<span class="code-token-var">r</span> => <span class="code-token-var">r</span>.<span class="code-token-var">product_id</span>) ?? [];
-  <span class="code-token-keyword">if</span> (!<span class="code-token-var">ids</span>.<span class="code-token-var">length</span>) { <span class="code-token-fn">setCartItems</span>([]); <span class="code-token-keyword">return</span>; }
-
-  <span class="code-token-comment">// Single batch query — avoids N+1, always returns live data</span>
-  <span class="code-token-keyword">const</span> { <span class="code-token-var">data</span>: <span class="code-token-var">products</span> } = <span class="code-token-keyword">await</span> <span class="code-token-var">supabase</span>
-    .<span class="code-token-fn">from</span>(<span class="code-token-string">'products'</span>)
-    .<span class="code-token-fn">select</span>(<span class="code-token-string">'id, name, price, image_url, stock_quantity, is_available'</span>)
-    .<span class="code-token-fn">in</span>(<span class="code-token-string">'id'</span>, <span class="code-token-var">ids</span>);
-
-  <span class="code-token-keyword">const</span> <span class="code-token-var">merged</span> = <span class="code-token-var">cartRows</span>.<span class="code-token-fn">map</span>(<span class="code-token-var">row</span> => ({
-    ...<span class="code-token-var">products</span>.<span class="code-token-fn">find</span>(<span class="code-token-var">p</span> => <span class="code-token-var">p</span>.<span class="code-token-var">id</span> === <span class="code-token-var">row</span>.<span class="code-token-var">product_id</span>),
-    <span class="code-token-var">quantity</span>: <span class="code-token-var">row</span>.<span class="code-token-var">quantity</span>,
-  }));
-
-  <span class="code-token-fn">setCartItems</span>(<span class="code-token-var">merged</span>); <span class="code-token-comment">// State now holds live, trusted product data</span>
-};</code></pre>
-            </div>
-          </div>
-        </div>
-
-        <!-- Evidence 2: CheckoutPage.jsx -->
-        <div class="mb-6">
-          <div class="flex items-center gap-3 mb-1">
-            <div class="w-2 h-2 rounded-full bg-blue-500"></div>
-            <p class="font-mono text-sm font-semibold text-surface-800">CheckoutPage.jsx</p>
-            <span class="text-xs text-surface-400">— ACID RPC invocation &amp; parseRpcError()</span>
-          </div>
-          <p class="text-xs text-surface-500 ml-5 mb-4">
-            The checkout page component. Calls the <code class="font-mono text-xs">place_order</code> Supabase RPC and delegates error interpretation to the dedicated parsing layer.
-          </p>
-
-          <div class="bg-surface-900 rounded-2xl overflow-hidden">
-            <div class="flex items-center justify-between px-5 py-3 border-b border-surface-800">
-              <div class="flex items-center gap-2">
-                <div class="flex gap-1.5">
-                  <span class="w-3 h-3 rounded-full bg-red-500"></span>
-                  <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
-                  <span class="w-3 h-3 rounded-full bg-green-500"></span>
-                </div>
-                <span class="font-mono text-xs text-surface-400 ml-2">CheckoutPage.jsx</span>
-              </div>
-              <span class="font-mono text-xs text-surface-600">ACID · RPC · i18n</span>
-            </div>
-            <div class="p-6 overflow-x-auto code-block">
-<pre><code><span class="code-token-comment">// ──────────────────────────────────────────────────────
-// parseRpcError — translates PostgreSQL error objects
-// from the place_order RPC into user-facing, localized
-// messages. Called exclusively on transaction failure.
-// ──────────────────────────────────────────────────────</span>
-<span class="code-token-keyword">function</span> <span class="code-token-fn">parseRpcError</span>(<span class="code-token-var">error</span>, <span class="code-token-var">t</span>) {
-  <span class="code-token-comment">// PostgreSQL RAISE EXCEPTION message is in error.message</span>
-  <span class="code-token-keyword">const</span> <span class="code-token-var">msg</span> = <span class="code-token-var">error</span>?.<span class="code-token-var">message</span> ?? <span class="code-token-string">''</span>;
-  <span class="code-token-keyword">const</span> <span class="code-token-var">code</span> = <span class="code-token-var">error</span>?.<span class="code-token-var">code</span> ?? <span class="code-token-string">''</span>;
-
-  <span class="code-token-keyword">if</span> (<span class="code-token-var">msg</span>.<span class="code-token-fn">includes</span>(<span class="code-token-string">'OUT_OF_STOCK'</span>) || <span class="code-token-var">msg</span>.<span class="code-token-fn">includes</span>(<span class="code-token-string">'out of stock'</span>)) {
-    <span class="code-token-keyword">return</span> {
-      <span class="code-token-var">type</span>:    <span class="code-token-string">'OUT_OF_STOCK'</span>,
-      <span class="code-token-var">message</span>: <span class="code-token-fn">t</span>(<span class="code-token-string">'checkout.errors.outOfStock'</span>), <span class="code-token-comment">// i18n key</span>
-      <span class="code-token-var">action</span>:  <span class="code-token-string">'REMOVE_ITEM'</span>,
-    };
-  }
-
-  <span class="code-token-keyword">if</span> (<span class="code-token-var">msg</span>.<span class="code-token-fn">includes</span>(<span class="code-token-string">'INSUFFICIENT_STOCK'</span>)) {
-    <span class="code-token-keyword">const</span> <span class="code-token-var">available</span> = <span class="code-token-fn">parseInt</span>(<span class="code-token-var">msg</span>.<span class="code-token-fn">match</span>(<span class="code-token-string">/available:(\d+)/</span>)?.[<span class="code-token-const">1</span>]) || <span class="code-token-const">0</span>;
-    <span class="code-token-keyword">return</span> {
-      <span class="code-token-var">type</span>:      <span class="code-token-string">'INSUFFICIENT_STOCK'</span>,
-      <span class="code-token-var">message</span>:   <span class="code-token-fn">t</span>(<span class="code-token-string">'checkout.errors.insufficientStock'</span>, { available }),
-      <span class="code-token-var">action</span>:    <span class="code-token-string">'REDUCE_QUANTITY'</span>,
-      <span class="code-token-var">available</span>,
-    };
-  }
-
-  <span class="code-token-keyword">if</span> (<span class="code-token-var">code</span> === <span class="code-token-string">'23505'</span>) { <span class="code-token-comment">// PostgreSQL unique violation</span>
-    <span class="code-token-keyword">return</span> {
-      <span class="code-token-var">type</span>:    <span class="code-token-string">'DUPLICATE_ORDER'</span>,
-      <span class="code-token-var">message</span>: <span class="code-token-fn">t</span>(<span class="code-token-string">'checkout.errors.duplicateOrder'</span>),
-      <span class="code-token-var">action</span>:  <span class="code-token-string">'REDIRECT_TO_ORDERS'</span>,
-    };
-  }
-
-  <span class="code-token-comment">// Fallback: unknown error — never expose raw error to user</span>
-  <span class="code-token-keyword">return</span> {
-    <span class="code-token-var">type</span>:    <span class="code-token-string">'UNKNOWN'</span>,
-    <span class="code-token-var">message</span>: <span class="code-token-fn">t</span>(<span class="code-token-string">'checkout.errors.unknown'</span>),
-    <span class="code-token-var">action</span>:  <span class="code-token-string">'RETRY'</span>,
-  };
-}
-
-<span class="code-token-comment">// ──────────────────────────────────────────────────────
-// handlePlaceOrder — invokes the place_order ACID RPC.
-// On success: clears cart, redirects to confirmation.
-// On failure: parses error and renders actionable UI.
-// ──────────────────────────────────────────────────────</span>
-<span class="code-token-keyword">const</span> <span class="code-token-fn">handlePlaceOrder</span> = <span class="code-token-keyword">async</span> () => {
-  <span class="code-token-fn">setIsSubmitting</span>(<span class="code-token-keyword">true</span>);
-  <span class="code-token-fn">setCheckoutError</span>(<span class="code-token-keyword">null</span>);
-
-  <span class="code-token-keyword">const</span> { <span class="code-token-var">data</span>, <span class="code-token-var">error</span> } = <span class="code-token-keyword">await</span> <span class="code-token-var">supabase</span>
-    .<span class="code-token-fn">rpc</span>(<span class="code-token-string">'place_order'</span>, {
-      <span class="code-token-var">p_user_id</span>:        <span class="code-token-var">user</span>.<span class="code-token-var">id</span>,
-      <span class="code-token-var">p_shipping_address</span>: <span class="code-token-var">shippingAddress</span>,
-      <span class="code-token-var">p_items</span>:          <span class="code-token-var">cartItems</span>.<span class="code-token-fn">map</span>(<span class="code-token-var">i</span> => ({
-        <span class="code-token-var">product_id</span>: <span class="code-token-var">i</span>.<span class="code-token-var">id</span>,
-        <span class="code-token-var">quantity</span>:   <span class="code-token-var">i</span>.<span class="code-token-var">quantity</span>,
-        <span class="code-token-var">unit_price</span>: <span class="code-token-var">i</span>.<span class="code-token-var">price</span>, <span class="code-token-comment">// live price from rehydration</span>
-      })),
-    });
-
-  <span class="code-token-keyword">if</span> (<span class="code-token-var">error</span>) {
-    <span class="code-token-comment">// ACID rollback has already occurred on the server.
-    // Parse the error and surface a clear user message.</span>
-    <span class="code-token-keyword">const</span> <span class="code-token-var">parsed</span> = <span class="code-token-fn">parseRpcError</span>(<span class="code-token-var">error</span>, <span class="code-token-var">t</span>);
-    <span class="code-token-fn">setCheckoutError</span>(<span class="code-token-var">parsed</span>);
-    <span class="code-token-fn">setIsSubmitting</span>(<span class="code-token-keyword">false</span>);
-
-    <span class="code-token-keyword">if</span> (<span class="code-token-var">parsed</span>.<span class="code-token-var">action</span> === <span class="code-token-string">'REDIRECT_TO_ORDERS'</span>) {
-      <span class="code-token-fn">navigate</span>(<span class="code-token-string">'/orders'</span>);
-    }
-    <span class="code-token-keyword">return</span>;
-  }
-
-  <span class="code-token-comment">// Success path: transaction committed atomically</span>
-  <span class="code-token-keyword">await</span> <span class="code-token-fn">clearCart</span>();
-  <span class="code-token-fn">navigate</span>(<span class="code-token-string">`/orders/${data.order_id}/confirmation`</span>);
-};</code></pre>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ══ 05 WHAT I LEARNED ══ -->
-      <section id="learned" class="scroll-mt-8">
-        <div class="flex items-center gap-4 mb-8">
-          <span class="font-mono text-xs text-brand-600 font-semibold tracking-widest uppercase">05</span>
-          <div class="flex-1 h-px bg-surface-200"></div>
-          <h2 class="font-display text-2xl text-surface-900">What I Learned</h2>
-        </div>
-
-        <div class="space-y-6">
-
-          <div class="flex gap-5 p-6 bg-white border border-surface-200 rounded-xl">
-            <div class="shrink-0 w-10 h-10 rounded-lg bg-brand-50 flex items-center justify-center">
-              <svg class="w-5 h-5 text-brand-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.966 8.966 0 00-6 2.292m0-14.25v14.25"/></svg>
-            </div>
-            <div>
-              <h4 class="font-semibold text-surface-900 mb-2">Reliability is a design philosophy, not a feature</h4>
-              <p class="text-surface-600 text-sm leading-relaxed">
-                I entered this project thinking of reliability as something you add at the end — error handling bolted onto working code. By the end of the project, I understood it as a design disposition applied from the first architectural decision. The choice to store only ID+quantity in cart state, for instance, was a reliability decision made before a single line of cart code was written. The robustness of the checkout came from that upstream choice.
-              </p>
-            </div>
-          </div>
-
-          <div class="flex gap-5 p-6 bg-white border border-surface-200 rounded-xl">
-            <div class="shrink-0 w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center">
-              <svg class="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/></svg>
-            </div>
-            <div>
-              <h4 class="font-semibold text-surface-900 mb-2">The frontend-backend contract requires explicit error negotiation</h4>
-              <p class="text-surface-600 text-sm leading-relaxed">
-                Building <code class="font-mono text-xs text-surface-700 bg-surface-100 px-1 py-0.5 rounded">parseRpcError()</code> taught me that the interface between the frontend and a database RPC is not just a data contract — it is also an <em>error contract</em>. I worked closely with the backend developer to define a consistent set of PostgreSQL RAISE EXCEPTION messages that the frontend could deterministically parse. This cross-layer collaboration is a skill I had underestimated before this project.
-              </p>
-            </div>
-          </div>
-
-          <div class="flex gap-5 p-6 bg-white border border-surface-200 rounded-xl">
-            <div class="shrink-0 w-10 h-10 rounded-lg bg-purple-50 flex items-center justify-center">
-              <svg class="w-5 h-5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
-            </div>
-            <div>
-              <h4 class="font-semibold text-surface-900 mb-2">Optimism requires a committed fallback</h4>
-              <p class="text-surface-600 text-sm leading-relaxed">
-                Implementing optimistic UI updates correctly is more difficult than either of the naive approaches (pure optimism with no rollback, or pure pessimism with blocking loaders). The discipline of always capturing a rollback snapshot before mutating state, and always having a tested code path that restores it, is a non-trivial engineering habit I developed during this project.
-              </p>
-            </div>
-          </div>
-
-          <div class="flex gap-5 p-6 bg-white border border-surface-200 rounded-xl">
-            <div class="shrink-0 w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center">
-              <svg class="w-5 h-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg>
-            </div>
-            <div>
-              <h4 class="font-semibold text-surface-900 mb-2">Users trust systems that tell the truth, even about failures</h4>
-              <p class="text-surface-600 text-sm leading-relaxed">
-                A key user research insight from our survey validation was that users in the Saudi e-commerce context are particularly sensitive to trust signals. An application that silently fails, or shows an opaque "Something went wrong" message, damages trust more than the failure itself. Designing clear, localized, actionable error messages — especially for the high-stakes checkout flow — is not UX polish; it is a reliability requirement.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ══ 06 CONCLUSION ══ -->
-      <section id="conclusion" class="scroll-mt-8">
-        <div class="flex items-center gap-4 mb-8">
-          <span class="font-mono text-xs text-brand-600 font-semibold tracking-widest uppercase">06</span>
-          <div class="flex-1 h-px bg-surface-200"></div>
-          <h2 class="font-display text-2xl text-surface-900">Conclusion</h2>
-        </div>
-
-        <div class="text-surface-700 leading-relaxed space-y-5 mb-10">
-          <p>
-            Dependability and reliability in a frontend application are not properties that emerge from good intentions or from adding error handling after the fact. They emerge from a series of deliberate, early architectural decisions that encode correct assumptions about the real-world conditions the system will face: users who log in mid-session, products whose prices change, transactions that must fail cleanly, and networks that are intermittently unavailable.
-          </p>
-          <p>
-            As Lead Frontend Engineer on Usaruna, every significant decision I made in the cart and checkout subsystem was made through the lens of these conditions. The hybrid cart's additive merge, the ID-only persistence strategy enabling live rehydration, the <code class="font-mono text-sm text-brand-700 bg-brand-50 px-1.5 py-0.5 rounded">parseRpcError()</code> translation layer, and the optimistic-with-rollback mutation pattern are four interlocking mechanisms that together produce a system users can trust.
-          </p>
-          <p>
-            This capstone project was my first experience building a production-grade, multi-tenant e-commerce platform from architecture to deployment. The software quality attribute of Dependability and Reliability — the one I was assigned — turned out to be the one that most fundamentally shaped my thinking as a frontend engineer. I leave this project understanding that a system that works most of the time is not a reliable system. A reliable system is one that behaves correctly and communicates honestly in every condition, including the difficult ones.
-          </p>
-        </div>
-
-        <!-- Final summary metrics -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div class="p-5 bg-surface-900 rounded-2xl text-center">
-            <p class="font-display text-3xl text-brand-400 mb-1">4</p>
-            <p class="text-xs text-surface-400 leading-snug">Reliability<br/>Mechanisms</p>
-          </div>
-          <div class="p-5 bg-surface-900 rounded-2xl text-center">
-            <p class="font-display text-3xl text-brand-400 mb-1">0</p>
-            <p class="text-xs text-surface-400 leading-snug">Raw Errors<br/>Surfaced to User</p>
-          </div>
-          <div class="p-5 bg-surface-900 rounded-2xl text-center">
-            <p class="font-display text-3xl text-brand-400 mb-1">1</p>
-            <p class="text-xs text-surface-400 leading-snug">DB Round-trip<br/>for Rehydration</p>
-          </div>
-          <div class="p-5 bg-surface-900 rounded-2xl text-center">
-            <p class="font-display text-3xl text-brand-400 mb-1">∞</p>
-            <p class="text-xs text-surface-400 leading-snug">Sessions<br/>Merged Safely</p>
-          </div>
-        </div>
-      </section>
-
-    </main>
-  </div>
-
-  <!-- ══════════════════════════════════════════════
-       FOOTER
-  ══════════════════════════════════════════════ -->
-  <footer class="border-t border-surface-200 bg-white">
-    <div class="max-w-5xl mx-auto px-6 py-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-      <div>
-        <p class="font-display text-lg text-surface-900 mb-1">Usaruna <span class="text-surface-400 font-body font-normal text-base">اسرنا</span></p>
-        <p class="text-xs text-surface-500">Senior Capstone Project · CPIT498/499</p>
-        <p class="text-xs text-surface-500">Supervised by Dr. Abdulrahman Altalhi · King Abdulaziz University</p>
       </div>
-      <div class="text-right">
-        <p class="font-semibold text-surface-800 text-sm">Khaled Baali</p>
-        <p class="text-xs text-surface-500">Lead Frontend Engineer</p>
-        <p class="text-xs text-brand-600 font-mono mt-1">CPIT455 · Person 2: Dependability &amp; Reliability</p>
+    </section>
+ 
+    <!-- ─────────────────────────────────────────
+         PERSON 3 · SECURITY · Rami Jameel
+         ★ SWAP NAME: change "Rami Jameel" below
+    ───────────────────────────────────────── -->
+    <section id="person-3" class="scroll-mt-8">
+      <div class="gradient-border rounded-2xl overflow-hidden bg-white">
+        <div class="card-accent-3 p-8">
+          <div class="flex flex-col md:flex-row md:items-start gap-6 mb-8">
+            <div class="shrink-0 w-14 h-14 rounded-2xl icon-bg-3 flex items-center justify-center">
+              <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center gap-3 mb-2">
+                <span class="font-mono text-[10px] tracking-widest uppercase badge-3 px-2 py-0.5 rounded-full font-semibold">Person 3</span>
+                <span class="font-mono text-[10px] tracking-widest uppercase badge-3 px-2 py-0.5 rounded-full">Security &amp; Access Control</span>
+              </div>
+              <!-- ★ SWAP NAME: Person 3 full name -->
+              <h2 class="font-display text-2xl md:text-3xl text-surface-900 mb-1">Rami Jameel</h2>
+              <p class="text-surface-500 text-sm">Security Engineer &amp; Database Policy Architect</p>
+            </div>
+          </div>
+ 
+          <div class="p-5 rounded-xl bg-red-50 border border-red-100 mb-8">
+            <p class="text-xs font-mono text-red-600 uppercase tracking-widest mb-2 font-semibold">Concept Definition</p>
+            <p class="text-surface-700 text-sm leading-relaxed">
+              <strong class="text-surface-900">Security &amp; Access Control</strong> encompasses the policies, mechanisms, and design
+              patterns that ensure users can only read and write data they are authorized to access. In a multi-vendor marketplace,
+              this is the critical engineering discipline that prevents one seller from viewing or modifying another seller's data.
+            </p>
+          </div>
+ 
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <p class="text-xs font-mono text-surface-400 uppercase tracking-widest mb-4">Key Contributions</p>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 w-2 h-2 rounded-full dot-3 shrink-0"></span>
+                  <div>
+                    <p class="text-sm font-semibold text-surface-800">Supabase Auth Integration</p>
+                    <p class="text-xs text-surface-500 leading-relaxed">Implemented JWT-based authentication with Supabase Auth, ensuring every API request carries a signed user identity token verified server-side.</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 w-2 h-2 rounded-full dot-3 shrink-0"></span>
+                  <div>
+                    <p class="text-sm font-semibold text-surface-800">Row-Level Security (RLS) Policies</p>
+                    <p class="text-xs text-surface-500 leading-relaxed">Designed and deployed PostgreSQL RLS policies on all sensitive tables (<code class="font-mono text-xs bg-surface-100 px-0.5 rounded">products</code>, <code class="font-mono text-xs bg-surface-100 px-0.5 rounded">orders</code>, <code class="font-mono text-xs bg-surface-100 px-0.5 rounded">cart_items</code>), enforcing multi-vendor isolation at the database layer.</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 w-2 h-2 rounded-full dot-3 shrink-0"></span>
+                  <div>
+                    <p class="text-sm font-semibold text-surface-800">SECURITY DEFINER Guard on RPC</p>
+                    <p class="text-xs text-surface-500 leading-relaxed">The <code class="font-mono text-xs bg-surface-100 px-0.5 rounded">place_order</code> RPC runs as <code class="font-mono text-xs bg-surface-100 px-0.5 rounded">SECURITY DEFINER</code>, granting it elevated privileges only for the exact operations required, scoped by explicit <code class="font-mono text-xs bg-surface-100 px-0.5 rounded">auth.uid()</code> checks.</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 w-2 h-2 rounded-full dot-3 shrink-0"></span>
+                  <div>
+                    <p class="text-sm font-semibold text-surface-800">Frontend Route Guards</p>
+                    <p class="text-xs text-surface-500 leading-relaxed">React Router protected routes prevent unauthenticated users from accessing seller dashboards, checkout flows, and order management pages.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-mono text-surface-400 uppercase tracking-widest mb-4">Evidence · RLS Policies (SQL)</p>
+              <div class="bg-surface-900 rounded-xl p-5 code-block">
+<pre><code><span class="code-token-comment">-- Sellers can only manage their own products</span>
+<span class="code-token-keyword">CREATE POLICY</span> <span class="code-token-string">"seller_owns_products"</span>
+  <span class="code-token-keyword">ON</span> <span class="code-token-var">products</span>
+  <span class="code-token-keyword">FOR ALL</span>
+  <span class="code-token-keyword">USING</span> (<span class="code-token-fn">auth.uid</span>() = <span class="code-token-var">seller_id</span>)
+  <span class="code-token-keyword">WITH CHECK</span> (<span class="code-token-fn">auth.uid</span>() = <span class="code-token-var">seller_id</span>);
+ 
+<span class="code-token-comment">-- Buyers see only their own cart items</span>
+<span class="code-token-keyword">CREATE POLICY</span> <span class="code-token-string">"user_owns_cart"</span>
+  <span class="code-token-keyword">ON</span> <span class="code-token-var">cart_items</span>
+  <span class="code-token-keyword">FOR ALL</span>
+  <span class="code-token-keyword">USING</span> (<span class="code-token-fn">auth.uid</span>() = <span class="code-token-var">user_id</span>);
+ 
+<span class="code-token-comment">-- RPC elevated scope, user-scoped guard</span>
+<span class="code-token-keyword">CREATE FUNCTION</span> <span class="code-token-fn">place_order</span>(...)
+  <span class="code-token-keyword">SECURITY DEFINER</span>
+  <span class="code-token-keyword">SET</span> search_path = <span class="code-token-var">public</span> <span class="code-token-keyword">AS</span> $$
+  ...
+  <span class="code-token-keyword">WHERE</span> <span class="code-token-var">user_id</span> = <span class="code-token-fn">auth.uid</span>() <span class="code-token-comment">-- never trust input</span>
+$$;</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+ 
+    <!-- ─────────────────────────────────────────
+         PERSON 4 · DISTRIBUTED & CLOUD · Ahmed Aljohani
+         ★ SWAP NAME: change "Ahmed Aljohani" below
+    ───────────────────────────────────────── -->
+    <section id="person-4" class="scroll-mt-8">
+      <div class="gradient-border rounded-2xl overflow-hidden bg-white">
+        <div class="card-accent-4 p-8">
+          <div class="flex flex-col md:flex-row md:items-start gap-6 mb-8">
+            <div class="shrink-0 w-14 h-14 rounded-2xl icon-bg-4 flex items-center justify-center">
+              <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z"/>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center gap-3 mb-2">
+                <span class="font-mono text-[10px] tracking-widest uppercase badge-4 px-2 py-0.5 rounded-full font-semibold">Person 4</span>
+                <span class="font-mono text-[10px] tracking-widest uppercase badge-4 px-2 py-0.5 rounded-full">Distributed &amp; Cloud Architecture</span>
+              </div>
+              <!-- ★ SWAP NAME: Person 4 full name -->
+              <h2 class="font-display text-2xl md:text-3xl text-surface-900 mb-1">Ahmed Aljohani</h2>
+              <p class="text-surface-500 text-sm">Cloud Infrastructure &amp; Architecture Lead</p>
+            </div>
+          </div>
+ 
+          <div class="p-5 rounded-xl bg-sky-50 border border-sky-100 mb-8">
+            <p class="text-xs font-mono text-sky-700 uppercase tracking-widest mb-2 font-semibold">Concept Definition</p>
+            <p class="text-surface-700 text-sm leading-relaxed">
+              <strong class="text-surface-900">Distributed &amp; Cloud Architecture</strong> is the design discipline of decomposing a
+              system into independently deployable, scalable services hosted on managed cloud infrastructure. The key concerns are
+              the clear separation of responsibilities across layers, minimizing operational burden, and achieving horizontal
+              scalability without custom infrastructure management.
+            </p>
+          </div>
+ 
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <p class="text-xs font-mono text-surface-400 uppercase tracking-widest mb-4">Key Contributions</p>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 w-2 h-2 rounded-full dot-4 shrink-0"></span>
+                  <div>
+                    <p class="text-sm font-semibold text-surface-800">BaaS Architectural Model</p>
+                    <p class="text-xs text-surface-500 leading-relaxed">Designed the overall system as a Backend-as-a-Service architecture: the React SPA is a thin, stateless presentation layer; all data, auth, and file logic lives in Supabase's managed cloud.</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 w-2 h-2 rounded-full dot-4 shrink-0"></span>
+                  <div>
+                    <p class="text-sm font-semibold text-surface-800">Layer Separation: UI ↔ Data ↔ Storage</p>
+                    <p class="text-xs text-surface-500 leading-relaxed">Enforced strict separation: React handles rendering, Supabase PostgREST handles CRUD queries, Supabase Storage handles product images — each replaceable independently.</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 w-2 h-2 rounded-full dot-4 shrink-0"></span>
+                  <div>
+                    <p class="text-sm font-semibold text-surface-800">PostgreSQL as Distributed State Store</p>
+                    <p class="text-xs text-surface-500 leading-relaxed">Designed the database schema as the single authoritative source of truth for cart state, order lifecycle, and product inventory — enabling multi-device consistency.</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 w-2 h-2 rounded-full dot-4 shrink-0"></span>
+                  <div>
+                    <p class="text-sm font-semibold text-surface-800">City-Based Geo-Filtering</p>
+                    <p class="text-xs text-surface-500 leading-relaxed">Implemented location-aware product filtering at the PostgREST query layer, scoping marketplace listings to the buyer's city without additional infrastructure.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-mono text-surface-400 uppercase tracking-widest mb-4">Evidence · Architecture Diagram</p>
+              <div class="bg-surface-900 rounded-xl p-5 code-block overflow-x-auto">
+<pre><code><span class="code-token-comment">  Usaruna · Layered Architecture</span>
+ 
+<span class="code-token-plain">  ┌────────────────────────────────────┐</span>
+<span class="code-token-plain">  │  </span><span class="code-token-fn">PRESENTATION LAYER</span>                 <span class="code-token-plain">│</span>
+<span class="code-token-plain">  │  React 19 SPA (Vite · Tailwind)   │</span>
+<span class="code-token-plain">  │  Stateless · CDN-deployed         │</span>
+<span class="code-token-plain">  └──────────────┬─────────────────────┘</span>
+<span class="code-token-plain">                 │ HTTPS + JWT</span>
+<span class="code-token-plain">  ┌──────────────▼─────────────────────┐</span>
+<span class="code-token-plain">  │  </span><span class="code-token-var">SUPABASE CLOUD LAYER</span>               <span class="code-token-plain">│</span>
+<span class="code-token-plain">  │  ┌──────────┐  ┌────────────────┐  │</span>
+<span class="code-token-plain">  │  │  Auth    │  │  PostgREST API │  │</span>
+<span class="code-token-plain">  │  │  (JWT)   │  │  (auto-gen)    │  │</span>
+<span class="code-token-plain">  │  └──────────┘  └────────┬───────┘  │</span>
+<span class="code-token-plain">  │  ┌──────────┐           │          │</span>
+<span class="code-token-plain">  │  │ Storage  │  ┌────────▼───────┐  │</span>
+<span class="code-token-plain">  │  │ (images) │  │  PostgreSQL DB │  │</span>
+<span class="code-token-plain">  │  └──────────┘  │  + RLS + RPCs  │  │</span>
+<span class="code-token-plain">  │                └────────────────┘  │</span>
+<span class="code-token-plain">  └────────────────────────────────────┘</span></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+ 
+    <!-- ─────────────────────────────────────────
+         PERSON 5 · TESTING & RISK · Anas Ibarim
+         ★ SWAP NAME: change "Anas Ibarim" below
+    ───────────────────────────────────────── -->
+    <section id="person-5" class="scroll-mt-8">
+      <div class="gradient-border rounded-2xl overflow-hidden bg-white">
+        <div class="card-accent-5 p-8">
+          <div class="flex flex-col md:flex-row md:items-start gap-6 mb-8">
+            <div class="shrink-0 w-14 h-14 rounded-2xl icon-bg-5 flex items-center justify-center">
+              <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center gap-3 mb-2">
+                <span class="font-mono text-[10px] tracking-widest uppercase badge-5 px-2 py-0.5 rounded-full font-semibold">Person 5</span>
+                <span class="font-mono text-[10px] tracking-widest uppercase badge-5 px-2 py-0.5 rounded-full">Testing, Quality &amp; Risk Analysis</span>
+              </div>
+              <!-- ★ SWAP NAME: Person 5 full name -->
+              <h2 class="font-display text-2xl md:text-3xl text-surface-900 mb-1">Anas Ibarim</h2>
+              <p class="text-surface-500 text-sm">QA Lead &amp; Risk Analyst</p>
+            </div>
+          </div>
+ 
+          <div class="p-5 rounded-xl bg-amber-50 border border-amber-100 mb-8">
+            <p class="text-xs font-mono text-amber-700 uppercase tracking-widest mb-2 font-semibold">Concept Definition</p>
+            <p class="text-surface-700 text-sm leading-relaxed">
+              <strong class="text-surface-900">Testing, Quality &amp; Risk Analysis</strong> encompasses the systematic verification
+              that a software system meets its requirements, the identification of failure modes before they reach users, and the
+              mitigation of risks through layered defensive engineering. In Usaruna this included both automated test suites and
+              database-level safeguards against business-critical failure scenarios.
+            </p>
+          </div>
+ 
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <p class="text-xs font-mono text-surface-400 uppercase tracking-widest mb-4">Key Contributions</p>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 w-2 h-2 rounded-full dot-5 shrink-0"></span>
+                  <div>
+                    <p class="text-sm font-semibold text-surface-800">Vitest Unit Test Suite</p>
+                    <p class="text-xs text-surface-500 leading-relaxed">Authored unit tests with Vitest for all pure utility functions: cart merge logic, <code class="font-mono text-xs bg-surface-100 px-0.5 rounded">parseRpcError()</code>, price calculation helpers, and form validators.</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 w-2 h-2 rounded-full dot-5 shrink-0"></span>
+                  <div>
+                    <p class="text-sm font-semibold text-surface-800">Playwright E2E Tests</p>
+                    <p class="text-xs text-surface-500 leading-relaxed">End-to-end test scenarios covering the complete purchase journey: browse → add to cart → login → merge → checkout → order confirmation, and the seller product management flow.</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 w-2 h-2 rounded-full dot-5 shrink-0"></span>
+                  <div>
+                    <p class="text-sm font-semibold text-surface-800">Risk: Overselling Mitigation</p>
+                    <p class="text-xs text-surface-500 leading-relaxed">Documented and verified the ACID <code class="font-mono text-xs bg-surface-100 px-0.5 rounded">place_order</code> RPC as the mitigation for the overselling race-condition risk — stock decrement and order creation are atomic.</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 w-2 h-2 rounded-full dot-5 shrink-0"></span>
+                  <div>
+                    <p class="text-sm font-semibold text-surface-800">Risk: Unauthorized Access Mitigation</p>
+                    <p class="text-xs text-surface-500 leading-relaxed">Verified RLS policies through integration tests that assert cross-user data access returns empty sets, confirming that no seller can read another's orders or products.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-mono text-surface-400 uppercase tracking-widest mb-4">Evidence · Test Samples</p>
+              <div class="bg-surface-900 rounded-xl p-5 code-block">
+<pre><code><span class="code-token-comment">// Vitest — parseRpcError unit test</span>
+<span class="code-token-fn">describe</span>(<span class="code-token-string">'parseRpcError'</span>, () => {
+  <span class="code-token-fn">it</span>(<span class="code-token-string">'maps OUT_OF_STOCK correctly'</span>, () => {
+    <span class="code-token-keyword">const</span> <span class="code-token-var">result</span> = <span class="code-token-fn">parseRpcError</span>(
+      { message: <span class="code-token-string">'OUT_OF_STOCK'</span> }, <span class="code-token-var">t</span>
+    );
+    <span class="code-token-fn">expect</span>(<span class="code-token-var">result</span>.<span class="code-token-var">type</span>).<span class="code-token-fn">toBe</span>(<span class="code-token-string">'OUT_OF_STOCK'</span>);
+    <span class="code-token-fn">expect</span>(<span class="code-token-var">result</span>.<span class="code-token-var">action</span>).<span class="code-token-fn">toBe</span>(<span class="code-token-string">'REMOVE_ITEM'</span>);
+  });
+});
+ 
+<span class="code-token-comment">// Playwright — guest-to-auth cart merge</span>
+<span class="code-token-fn">test</span>(<span class="code-token-string">'cart persists through login'</span>, <span class="code-token-keyword">async</span> ({ page }) => {
+  <span class="code-token-keyword">await</span> page.<span class="code-token-fn">goto</span>(<span class="code-token-string">'/products'</span>);
+  <span class="code-token-keyword">await</span> page.<span class="code-token-fn">click</span>(<span class="code-token-string">'[data-testid=add-to-cart]'</span>);
+  <span class="code-token-keyword">await</span> <span class="code-token-fn">loginAs</span>(page, testUser);
+  <span class="code-token-keyword">await</span> <span class="code-token-fn">expect</span>(page.<span class="code-token-fn">locator</span>(<span class="code-token-string">'.cart-count'</span>))
+    .<span class="code-token-fn">toHaveText</span>(<span class="code-token-string">'1'</span>); <span class="code-token-comment">// merged</span>
+});</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+ 
+  </main>
+ 
+  <!-- ══════════════════════════════════════════
+       SUMMARY TABLE
+  ══════════════════════════════════════════ -->
+  <div class="bg-white border-y border-surface-200">
+    <div class="max-w-6xl mx-auto px-6 py-12">
+      <p class="text-xs font-mono text-surface-400 uppercase tracking-widest mb-6 text-center">Team Concept Summary</p>
+      <div class="overflow-x-auto rounded-xl border border-surface-200">
+        <table class="w-full text-sm">
+          <thead class="bg-surface-900 text-white">
+            <tr>
+              <th class="text-left px-5 py-3 font-mono text-xs tracking-wider text-surface-300">#</th>
+              <th class="text-left px-5 py-3 font-mono text-xs tracking-wider text-surface-300">Name</th>
+              <th class="text-left px-5 py-3 font-mono text-xs tracking-wider text-surface-300">CPIT455 Concept</th>
+              <th class="text-left px-5 py-3 font-mono text-xs tracking-wider text-surface-300 hidden md:table-cell">Core Evidence</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-surface-100">
+            <!-- ★ SWAP NAME rows if mapping changes -->
+            <tr class="bg-white hover:bg-indigo-50/40 transition-colors">
+              <td class="px-5 py-4 font-mono text-xs text-surface-500">P1</td>
+              <td class="px-5 py-4 font-semibold text-surface-800">Busam Barak</td>
+              <td class="px-5 py-4"><span class="badge-1 text-xs px-2 py-0.5 rounded-full font-medium">Software Reuse</span></td>
+              <td class="px-5 py-4 text-xs text-surface-500 hidden md:table-cell">React, Vite, Tailwind, Supabase BaaS, PostgREST</td>
+            </tr>
+            <tr class="bg-surface-50/50 hover:bg-brand-50/40 transition-colors">
+              <td class="px-5 py-4 font-mono text-xs text-surface-500">P2</td>
+              <td class="px-5 py-4 font-semibold text-surface-800">Khaled Baali</td>
+              <td class="px-5 py-4"><span class="badge-2 text-xs px-2 py-0.5 rounded-full font-medium">Dependability &amp; Reliability</span></td>
+              <td class="px-5 py-4 text-xs text-surface-500 hidden md:table-cell">Hybrid Cart merge, Live Rehydration, parseRpcError(), Optimistic UI</td>
+            </tr>
+            <tr class="bg-white hover:bg-red-50/40 transition-colors">
+              <td class="px-5 py-4 font-mono text-xs text-surface-500">P3</td>
+              <td class="px-5 py-4 font-semibold text-surface-800">Rami Jameel</td>
+              <td class="px-5 py-4"><span class="badge-3 text-xs px-2 py-0.5 rounded-full font-medium">Security &amp; Access Control</span></td>
+              <td class="px-5 py-4 text-xs text-surface-500 hidden md:table-cell">Supabase Auth, RLS policies, SECURITY DEFINER RPC guard</td>
+            </tr>
+            <tr class="bg-surface-50/50 hover:bg-sky-50/40 transition-colors">
+              <td class="px-5 py-4 font-mono text-xs text-surface-500">P4</td>
+              <td class="px-5 py-4 font-semibold text-surface-800">Ahmed Aljohani</td>
+              <td class="px-5 py-4"><span class="badge-4 text-xs px-2 py-0.5 rounded-full font-medium">Distributed &amp; Cloud Arch.</span></td>
+              <td class="px-5 py-4 text-xs text-surface-500 hidden md:table-cell">BaaS model, React ↔ PostgreSQL layer separation, geo-filtering</td>
+            </tr>
+            <tr class="bg-white hover:bg-amber-50/40 transition-colors">
+              <td class="px-5 py-4 font-mono text-xs text-surface-500">P5</td>
+              <td class="px-5 py-4 font-semibold text-surface-800">Anas Ibarim</td>
+              <td class="px-5 py-4"><span class="badge-5 text-xs px-2 py-0.5 rounded-full font-medium">Testing, Quality &amp; Risk</span></td>
+              <td class="px-5 py-4 text-xs text-surface-500 hidden md:table-cell">Vitest unit tests, Playwright E2E, overselling &amp; unauthorized access risk mitigation</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════ -->
+  <footer class="bg-surface-900">
+    <div class="max-w-6xl mx-auto px-6 py-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+      <div>
+        <h2 class="font-display text-2xl text-white mb-1">Usaruna <span class="text-surface-500 font-normal text-xl">اسرنا</span></h2>
+        <p class="text-surface-400 text-xs mb-1">Senior Capstone Project · CPIT498/499 &amp; CPIT455</p>
+        <p class="text-surface-500 text-xs">Supervised by <span class="text-surface-300">Dr. Abdulrahman Altalhi</span> · King Abdulaziz University</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3 text-right">
+        <!-- ★ SWAP NAMES in footer if needed -->
+        <div class="text-left p-3 rounded-lg bg-surface-800 border border-surface-700">
+          <p class="font-mono text-[10px] text-indigo-400 tracking-widest uppercase mb-0.5">P1</p>
+          <p class="text-xs font-semibold text-white">Busam Barak</p>
+        </div>
+        <div class="text-left p-3 rounded-lg bg-surface-800 border border-surface-700">
+          <p class="font-mono text-[10px] text-brand-400 tracking-widest uppercase mb-0.5">P2</p>
+          <p class="text-xs font-semibold text-white">Khaled Baali</p>
+        </div>
+        <div class="text-left p-3 rounded-lg bg-surface-800 border border-surface-700">
+          <p class="font-mono text-[10px] text-red-400 tracking-widest uppercase mb-0.5">P3</p>
+          <p class="text-xs font-semibold text-white">Rami Jameel</p>
+        </div>
+        <div class="text-left p-3 rounded-lg bg-surface-800 border border-surface-700">
+          <p class="font-mono text-[10px] text-sky-400 tracking-widest uppercase mb-0.5">P4</p>
+          <p class="text-xs font-semibold text-white">Ahmed Aljohani</p>
+        </div>
+        <div class="text-left p-3 rounded-lg bg-surface-800 border border-surface-700">
+          <p class="font-mono text-[10px] text-amber-400 tracking-widest uppercase mb-0.5">P5</p>
+          <p class="text-xs font-semibold text-white">Anas Ibarim</p>
+        </div>
       </div>
     </div>
   </footer>
-
-  <!-- ══════════════════════════════════════════════
-       SCRIPTS
-  ══════════════════════════════════════════════ -->
+ 
   <script>
-    // Progress bar
+    // Scroll progress bar
     const bar = document.getElementById('progressBar');
     window.addEventListener('scroll', () => {
       const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-      const pct = (scrollTop / (scrollHeight - clientHeight)) * 100;
-      bar.style.width = pct + '%';
+      bar.style.width = (scrollTop / (scrollHeight - clientHeight) * 100) + '%';
     });
-
-    // TOC active state via IntersectionObserver
-    const sections = document.querySelectorAll('section[id]');
-    const tocLinks = document.querySelectorAll('.toc-link');
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          tocLinks.forEach(l => l.classList.remove('active'));
-          const active = document.querySelector(`.toc-link[href="#${entry.target.id}"]`);
-          if (active) active.classList.add('active');
-        }
-      });
-    }, { rootMargin: '-20% 0px -70% 0px' });
-
-    sections.forEach(s => observer.observe(s));
   </script>
 </body>
 </html>
+ 
